@@ -23,7 +23,7 @@ form{
 }
 
 div{
-    margin-bottom: 20px;
+    margin-bottom: 23px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,4 +53,15 @@ error-output{
     font-size: 12px;
     font-style: italic;
     color: red;
+}
+
+@media only screen and (max-width: 360px){
+    h1{
+        font-size: 40px;
+        text-align: center;
+    }
+    label{
+        width: 40%;
+        font-size: 14px;
+    }
 }
