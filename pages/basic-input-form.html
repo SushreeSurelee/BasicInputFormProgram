@@ -17,6 +17,7 @@
       <div>
         <label for="pwd">password input type:</label>
         <input type="password" id="pwd" name="pwd" required>
+        <error-output class="pwd-error" for="pwd"></error-output>
       </div>
       <div>
         <label for="email">email input type:</label>
@@ -64,6 +65,16 @@
         textError.textContent="";
         else textError.textContent="Name is Incorrect";
       });
+
+      const pwd=document.querySelector('#pwd');
+      const pwdError=document.querySelector('.pwd-error')
+      pwd.addEventListener('input', function() {
+        let pwdRegex = RegExp('(?=.*[A-Z])(?=.*[0-9])(?=.*[#?!@$%^&*-])[0-9a-zA-Z#?!@$%^&*-]{8,}');
+        if (pwdRegex.test(pwd.value))
+        pwdError.textContent="";
+        else pwdError.textContent="Password does not match with requirment";
+      });
+
 
       const email=document.querySelector('#email');
       const emailError=document.querySelector('.email-error');
